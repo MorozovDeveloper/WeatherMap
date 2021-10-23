@@ -18,6 +18,8 @@
 		7C3C3EF92723FC4C00ED8B95 /* WeatherMap_PPUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3C3EF82723FC4C00ED8B95 /* WeatherMap_PPUITests.swift */; };
 		7C3C3EFB2723FC4C00ED8B95 /* WeatherMap_PPUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3C3EFA2723FC4C00ED8B95 /* WeatherMap_PPUITestsLaunchTests.swift */; };
 		7C3C3F082723FD3F00ED8B95 /* Description.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 7C3C3F072723FD3F00ED8B95 /* Description.rtf */; };
+		7C3C3F1127240E3C00ED8B95 /* FloatingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3C3F0F27240E3C00ED8B95 /* FloatingViewController.swift */; };
+		7C3C3F1227240E3C00ED8B95 /* FloatingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7C3C3F1027240E3C00ED8B95 /* FloatingViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +55,8 @@
 		7C3C3EF82723FC4C00ED8B95 /* WeatherMap_PPUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherMap_PPUITests.swift; sourceTree = "<group>"; };
 		7C3C3EFA2723FC4C00ED8B95 /* WeatherMap_PPUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherMap_PPUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		7C3C3F072723FD3F00ED8B95 /* Description.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = Description.rtf; sourceTree = "<group>"; };
+		7C3C3F0F27240E3C00ED8B95 /* FloatingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingViewController.swift; sourceTree = "<group>"; };
+		7C3C3F1027240E3C00ED8B95 /* FloatingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FloatingViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +111,8 @@
 				7C3C3ED62723FC4B00ED8B95 /* SceneDelegate.swift */,
 				7C3C3ED82723FC4B00ED8B95 /* ViewController.swift */,
 				7C3C3EDA2723FC4B00ED8B95 /* Main.storyboard */,
+				7C3C3F0F27240E3C00ED8B95 /* FloatingViewController.swift */,
+				7C3C3F1027240E3C00ED8B95 /* FloatingViewController.xib */,
 				7C3C3EE02723FC4C00ED8B95 /* Assets.xcassets */,
 				7C3C3EE22723FC4C00ED8B95 /* LaunchScreen.storyboard */,
 				7C3C3F072723FD3F00ED8B95 /* Description.rtf */,
@@ -241,6 +247,7 @@
 				7C3C3F082723FD3F00ED8B95 /* Description.rtf in Resources */,
 				7C3C3EE12723FC4C00ED8B95 /* Assets.xcassets in Resources */,
 				7C3C3EDC2723FC4B00ED8B95 /* Main.storyboard in Resources */,
+				7C3C3F1227240E3C00ED8B95 /* FloatingViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -268,6 +275,7 @@
 				7C3C3ED92723FC4B00ED8B95 /* ViewController.swift in Sources */,
 				7C3C3ED52723FC4B00ED8B95 /* AppDelegate.swift in Sources */,
 				7C3C3ED72723FC4B00ED8B95 /* SceneDelegate.swift in Sources */,
+				7C3C3F1127240E3C00ED8B95 /* FloatingViewController.swift in Sources */,
 				7C3C3EDF2723FC4B00ED8B95 /* WeatherMap_PP.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
