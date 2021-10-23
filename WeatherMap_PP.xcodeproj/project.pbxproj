@@ -17,6 +17,7 @@
 		7C3C3EEF2723FC4C00ED8B95 /* WeatherMap_PPTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3C3EEE2723FC4C00ED8B95 /* WeatherMap_PPTests.swift */; };
 		7C3C3EF92723FC4C00ED8B95 /* WeatherMap_PPUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3C3EF82723FC4C00ED8B95 /* WeatherMap_PPUITests.swift */; };
 		7C3C3EFB2723FC4C00ED8B95 /* WeatherMap_PPUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3C3EFA2723FC4C00ED8B95 /* WeatherMap_PPUITestsLaunchTests.swift */; };
+		7C3C3F082723FD3F00ED8B95 /* Description.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 7C3C3F072723FD3F00ED8B95 /* Description.rtf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		7C3C3EF42723FC4C00ED8B95 /* WeatherMap_PPUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WeatherMap_PPUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C3C3EF82723FC4C00ED8B95 /* WeatherMap_PPUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherMap_PPUITests.swift; sourceTree = "<group>"; };
 		7C3C3EFA2723FC4C00ED8B95 /* WeatherMap_PPUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherMap_PPUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		7C3C3F072723FD3F00ED8B95 /* Description.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = Description.rtf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +109,7 @@
 				7C3C3EDA2723FC4B00ED8B95 /* Main.storyboard */,
 				7C3C3EE02723FC4C00ED8B95 /* Assets.xcassets */,
 				7C3C3EE22723FC4C00ED8B95 /* LaunchScreen.storyboard */,
+				7C3C3F072723FD3F00ED8B95 /* Description.rtf */,
 				7C3C3EE52723FC4C00ED8B95 /* Info.plist */,
 				7C3C3EDD2723FC4B00ED8B95 /* WeatherMap_PP.xcdatamodeld */,
 			);
@@ -235,6 +238,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7C3C3EE42723FC4C00ED8B95 /* LaunchScreen.storyboard in Resources */,
+				7C3C3F082723FD3F00ED8B95 /* Description.rtf in Resources */,
 				7C3C3EE12723FC4C00ED8B95 /* Assets.xcassets in Resources */,
 				7C3C3EDC2723FC4B00ED8B95 /* Main.storyboard in Resources */,
 			);
