@@ -7,23 +7,27 @@
 
 import UIKit
 
+
 class FloatingViewController: UIViewController {
     
     @IBOutlet weak var handleArea: UIView!
+    @IBOutlet weak var firstTextField: UITextField!
+    
+    @IBOutlet weak var searchBar: UISearchBar!
+    
+    var model: ModelWeather!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        searchBar.delegate = self
+        
         if self.view.frame.origin.y >= 0 {
             registerKeyboardNotification()
-        } else {
-            print("WWW")
         }
-        
     }
     
     deinit {
         removeKeyboardNotification()
-        registerKeyboardNotification2()
     }
 
     // KeyBoard
@@ -36,13 +40,6 @@ class FloatingViewController: UIViewController {
 //                                               selector: #selector(keyboardWillShow(notification:)),
 //                                               name: UIResponder.keyboardWillHideNotification,
 //                                               object: nil)
-    }
-    
-    func registerKeyboardNotification2() {
-                NotificationCenter.default.addObserver(self,
-                                                       selector: #selector(keyboardWillShow(notification:)),
-                                                       name: UIResponder.keyboardWillHideNotification,
-                                                       object: nil)
     }
 
     private func removeKeyboardNotification() {
@@ -59,7 +56,7 @@ class FloatingViewController: UIViewController {
             }
         }
     }
-    
+
     @objc private func keyboardWillHide (notification: Notification){
         if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
             if self.view.frame.origin.y != 0{
@@ -69,3 +66,34 @@ class FloatingViewController: UIViewController {
     }
 
 }
+
+// Networking
+extension FloatingViewController: UISearchBarDelegate {
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        let urlString = "https://api.openweathermap.org/data/2.5/weather?q=\(searchBar.text!)&appid=7e3403ac663fef8ed47de5ca39a32c07"
+        guard let url = URL(string: urlString) else {return}
+        
+        URLSession.shared.dataTask(with: url) { data, responce, error in
+            guard let data = data else {return}
+            
+            do {
+                let decodeJSON = JSONDecoder()
+                self.model = try decodeJSON.decode(ModelWeather.self, from: data)
+                
+                DispatchQueue.main.async {
+                    if let mapVC = self.parent as? MapViewController {
+                        mapVC.testLabel.text = self.model.name
+                    }
+                    print("City", self.model.name)
+                }
+            } catch {
+                print (error, "ERROR")
+            }
+            
+        }.resume()
+        
+    }
+    
+}
+ 
+

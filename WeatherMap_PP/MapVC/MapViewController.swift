@@ -15,7 +15,11 @@ class MapViewController: UIViewController {
         case collapsed // сжатый
     }
     
+    @IBOutlet weak var testLabel: UILabel!
+    
     var floatingViewController : FloatingViewController!
+   // var networking: Networking?
+    var floatingViewController2: FloatingViewController?
     
     let cardHeight: CGFloat = 500
     let cardHandleAreaHeight: CGFloat = 65
@@ -40,7 +44,6 @@ class MapViewController: UIViewController {
         if self.view.endEditing(true) {
             UIView.animate(withDuration: 0.5) {
                 self.floatingViewController.view.frame.origin.y = self.view.frame.height - self.cardHandleAreaHeight + 15
-                print("QQQ")
             }
         }
     }
@@ -93,4 +96,6 @@ class MapViewController: UIViewController {
     }
 
 }
+
+
 
