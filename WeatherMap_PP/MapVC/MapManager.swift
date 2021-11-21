@@ -7,39 +7,47 @@
 
 import Foundation
 import MapKit
+import CoreLocation
 
-//class MapManager {
+
+
+//class MapManager, CLLocationManagerDelegate {
 //
-//    let locationManager = CLLocationManager()
-//    private var placeCoordinate: CLLocationCoordinate2D?
-//
-//    // Метка на карте
-//    func setupPlacemark (place: Place, mapKit: MKMapView) {
-//        guard let location = place.location else {return}
-//
-//        let geocoder = CLGeocoder()
-//        geocoder.geocodeAddressString(location) { (placemarks, error) in
-//            if let error = error {
-//                print(error)
-//                return
-//            }
-//
-//            guard let placemarks = placemarks else {return}
-//            let placemark = placemarks.first // получили метку на карте
-//
-//            let annotation = MKPointAnnotation() // описание точки на карте
-//            annotation.title = place.name
-//            annotation.subtitle = place.type
-//
-//            guard let placemarkLocation = placemark?.location else {return} // определяем положение маркера
-//            annotation.coordinate = placemarkLocation.coordinate
-//            self.placeCoordinate = placemarkLocation.coordinate
-//            // выделяем маркер аннотации
-//            mapKit.showAnnotations([annotation], animated: true)
-//            mapKit.selectAnnotation(annotation, animated: true)
+//    @IBOutlet weak var mapView: MKMapView!
+//    
+//let manager = CLLocationManager()
+//    
+//    override func viewDidLoad() {
+//        super.viewDidLoad()
+//    }
+//    
+//    override func viewDidAppear(_ animated: Bool) {
+//        super.viewDidAppear(animated)
+//        manager.desiredAccuracy = kCLLocationAccuracyBest // battery
+//        manager.delegate = self
+//        manager.requestWhenInUseAuthorization()
+//        manager.startUpdatingLocation()
+//        
+//    }
+//    
+//    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+//        if let location = locations.first {
+//            manager.stopUpdatingLocation()
+//            
+//            render(location)
 //        }
 //    }
-//
-//
-//
+//    
+//    func render(_ location: CLLocation) {
+//        
+//        let coordinate = CLLocationCoordinate2D(latitude: location.coordinate.latitude,
+//                                                longitude: location.coordinate.longitude)
+//        let span = MKCoordinateSpan(latitudeDelta: 0.1,
+//                                    longitudeDelta: 0.1)
+//        let region = MKCoordinateRegion(center: coordinate,
+//                                        span: span)
+//        
+//        mapView.setRegion(region, animated: true)
+//    }
+//    
 //}

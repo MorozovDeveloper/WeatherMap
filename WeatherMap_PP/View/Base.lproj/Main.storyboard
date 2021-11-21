@@ -18,14 +18,10 @@
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="SQJ-Ku-7zq">
                                 <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="2Pk-cV-wdC"/>
+                                </connections>
                             </mapView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Test Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wDH-NA-sJ7">
-                                <rect key="frame" x="77" y="150" width="235" height="79"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -37,7 +33,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="testLabel" destination="wDH-NA-sJ7" id="vBm-Sy-bgX"/>
+                        <outlet property="mapView" destination="SQJ-Ku-7zq" id="cAn-eh-1La"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

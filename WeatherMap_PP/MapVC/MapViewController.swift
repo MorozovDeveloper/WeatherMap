@@ -6,23 +6,26 @@
 //
 
 import UIKit
+import MapKit
+import CoreLocation
 
-class MapViewController: UIViewController {
+class MapViewController: UIViewController, CLLocationManagerDelegate {
 
-    // положение FloatingVC
-    enum CardState{
-        case expanded // расширеный
-        case collapsed // сжатый
-    }
+    @IBOutlet weak var mapView: MKMapView!
     
-    @IBOutlet weak var testLabel: UILabel!
+    let manager = CLLocationManager()
+    let annotaionIdentifier = "annotaionIdentifier"
     
+    // for FloatingCard ->
     var floatingViewController : FloatingViewController!
-   // var networking: Networking?
-    var floatingViewController2: FloatingViewController?
     
     let cardHeight: CGFloat = 500
     let cardHandleAreaHeight: CGFloat = 65
+    
+    var pinText = ""
+    var subText = 0.0
+    var latCor = 0.0
+    var lonCor = 0.0
     
     var cardVisible = false
     var nextState: CardState{
@@ -30,72 +33,69 @@ class MapViewController: UIViewController {
     }
     
     var runningAnimations = [UIViewPropertyAnimator]()
-    var animationProgressWhenInterrupted: CGFloat = 0
+    // <-
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupCard()
+        //mapView.delegate = self
         
     }
     
-    // скрытие клавиатуры тапнув на любой объект  (! ДОДЕЛАТЬ ! После закрытия Вью нужно тапать 2 раза)
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        super.touchesBegan(touches, with: event)
-        if self.view.endEditing(true) {
-            UIView.animate(withDuration: 0.5) {
-                self.floatingViewController.view.frame.origin.y = self.view.frame.height - self.cardHandleAreaHeight + 15
-            }
-        }
-    }
-    
-    func setupCard() {
-        floatingViewController = FloatingViewController(nibName: "FloatingViewController", bundle: nil)
-        self.addChild(floatingViewController)
-        self.view.addSubview(floatingViewController.view)
-        
-        floatingViewController.view.frame = CGRect(x: 0,
-                                                   y: self.view.frame.height - cardHandleAreaHeight + 15,
-                                                   width: self.view.bounds.width,
-                                                   height: cardHeight)
-        floatingViewController.view.clipsToBounds = true
-        
-        // Gesture
-        let tapGestureRecognizer = UITapGestureRecognizer(target: self,
-                                                          action: #selector(MapViewController.handleCardTap(recognizer:)))
-        floatingViewController.handleArea.addGestureRecognizer(tapGestureRecognizer)
-    }
-    
-    @objc
-    func handleCardTap(recognizer: UITapGestureRecognizer){
-        switch recognizer.state{
-        case .ended:
-            animateTransitionIfNeedet(state: nextState, duration: 0.9)
-        default:
-            break
-        }
-    }
-    
-    func animateTransitionIfNeedet(state: CardState, duration: TimeInterval) {
-        if  runningAnimations.isEmpty {
-            let frameAnimator = UIViewPropertyAnimator(duration: duration, dampingRatio: 1) {
-                switch state {
-                case .expanded:
-                    self.floatingViewController.view.frame.origin.y = self.view.frame.height - self.cardHeight + 100
-                case .collapsed:
-                    self.floatingViewController.view.frame.origin.y = self.view.frame.height - self.cardHandleAreaHeight + 15
-                }
-        }
-            frameAnimator.addCompletion { _ in
-                self.cardVisible = !self.cardVisible
-                self.runningAnimations.removeAll()
-            }
-            
-            frameAnimator.startAnimation()
-            self.runningAnimations.append(frameAnimator)
-        }
-    }
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
 
+        if let location = locations.first {
+            manager.stopUpdatingLocation()
+            render(location)
+        }
+
+        func render(_ location: CLLocation) {
+
+            let coordinate = CLLocationCoordinate2D(latitude: latCor,
+                                                    longitude: lonCor)
+
+            let span = MKCoordinateSpan(latitudeDelta: 1.0,
+                                        longitudeDelta: 1.0) // маштаб
+
+            let region = MKCoordinateRegion(center: coordinate,
+                                            span: span)
+
+            self.mapView.setRegion(region, animated: true)
+
+            let pin = MKPointAnnotation()
+            pin.coordinate = coordinate
+            self.mapView.addAnnotation(pin)
+            pin.title = pinText
+            pin.subtitle = "\(subText)"
+        }
+    }
 }
 
+
+// Создаем баннер на маркере
+extension MapViewController: MKMapViewDelegate {
+    
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        
+        guard !(annotation is MKUserLocation) else {return nil}
+        
+        var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: annotaionIdentifier) as? MKPinAnnotationView
+        
+        if annotationView == nil {
+            annotationView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: annotaionIdentifier)
+            annotationView?.canShowCallout = true
+        }
+        
+        let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 25, height: 25))
+        imageView.layer.cornerRadius = 10
+        imageView.clipsToBounds = true
+        imageView.image = UIImage(systemName: "cloud")
+        annotationView?.rightCalloutAccessoryView = imageView
+        
+        return annotationView
+        
+    }
+    
+}
 
 

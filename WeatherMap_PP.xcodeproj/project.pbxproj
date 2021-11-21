@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7C177E312736F9F7000D2E5C /* FloatingCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C177E302736F9F7000D2E5C /* FloatingCard.swift */; };
 		7C3C3ED52723FC4B00ED8B95 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3C3ED42723FC4B00ED8B95 /* AppDelegate.swift */; };
 		7C3C3ED72723FC4B00ED8B95 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3C3ED62723FC4B00ED8B95 /* SceneDelegate.swift */; };
 		7C3C3ED92723FC4B00ED8B95 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3C3ED82723FC4B00ED8B95 /* MapViewController.swift */; };
@@ -20,7 +21,11 @@
 		7C3C3F082723FD3F00ED8B95 /* Description.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 7C3C3F072723FD3F00ED8B95 /* Description.rtf */; };
 		7C3C3F1127240E3C00ED8B95 /* FloatingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3C3F0F27240E3C00ED8B95 /* FloatingViewController.swift */; };
 		7C3C3F1227240E3C00ED8B95 /* FloatingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7C3C3F1027240E3C00ED8B95 /* FloatingViewController.xib */; };
+		7C54D557273D7A6D00449CF8 /* NetworkWeatherManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C54D556273D7A6D00449CF8 /* NetworkWeatherManager.swift */; };
+		7C54D559273D880200449CF8 /* CurrentWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C54D558273D880200449CF8 /* CurrentWeather.swift */; };
+		7C7E37EE2735408000269776 /* KeyboardNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C7E37ED2735408000269776 /* KeyboardNotification.swift */; };
 		7CD4868F2725971A000430D1 /* MapManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CD4868E2725971A000430D1 /* MapManager.swift */; };
+		7CE18E5527413A0D0061C9E8 /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CE18E5427413A0D0061C9E8 /* Place.swift */; };
 		7CEA28BA2727071200C259B6 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CEA28B92727071200C259B6 /* Model.swift */; };
 /* End PBXBuildFile section */
 
@@ -42,6 +47,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7C177E302736F9F7000D2E5C /* FloatingCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingCard.swift; sourceTree = "<group>"; };
 		7C3C3ED12723FC4B00ED8B95 /* WeatherMap_PP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherMap_PP.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C3C3ED42723FC4B00ED8B95 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7C3C3ED62723FC4B00ED8B95 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -59,7 +65,11 @@
 		7C3C3F072723FD3F00ED8B95 /* Description.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = Description.rtf; sourceTree = "<group>"; };
 		7C3C3F0F27240E3C00ED8B95 /* FloatingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingViewController.swift; sourceTree = "<group>"; };
 		7C3C3F1027240E3C00ED8B95 /* FloatingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FloatingViewController.xib; sourceTree = "<group>"; };
+		7C54D556273D7A6D00449CF8 /* NetworkWeatherManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkWeatherManager.swift; sourceTree = "<group>"; };
+		7C54D558273D880200449CF8 /* CurrentWeather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWeather.swift; sourceTree = "<group>"; };
+		7C7E37ED2735408000269776 /* KeyboardNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardNotification.swift; sourceTree = "<group>"; };
 		7CD4868E2725971A000430D1 /* MapManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapManager.swift; sourceTree = "<group>"; };
+		7CE18E5427413A0D0061C9E8 /* Place.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
 		7CEA28B92727071200C259B6 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -88,6 +98,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7C177E2F2736F9DD000D2E5C /* FloatingVC */ = {
+			isa = PBXGroup;
+			children = (
+				7C3C3F0F27240E3C00ED8B95 /* FloatingViewController.swift */,
+				7C177E302736F9F7000D2E5C /* FloatingCard.swift */,
+				7C7E37ED2735408000269776 /* KeyboardNotification.swift */,
+				7C54D556273D7A6D00449CF8 /* NetworkWeatherManager.swift */,
+				7C54D558273D880200449CF8 /* CurrentWeather.swift */,
+			);
+			path = FloatingVC;
+			sourceTree = "<group>";
+		};
+		7C177E322736FD81000D2E5C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				7C3C3F1027240E3C00ED8B95 /* FloatingViewController.xib */,
+				7C3C3EDA2723FC4B00ED8B95 /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		7C3C3EC82723FC4B00ED8B95 = {
 			isa = PBXGroup;
 			children = (
@@ -115,9 +146,8 @@
 				7C3C3ED62723FC4B00ED8B95 /* SceneDelegate.swift */,
 				7C9BCB41272EE69000C2D1C6 /* Model */,
 				7CD4869127259CF3000430D1 /* MapVC */,
-				7C3C3EDA2723FC4B00ED8B95 /* Main.storyboard */,
-				7C3C3F0F27240E3C00ED8B95 /* FloatingViewController.swift */,
-				7C3C3F1027240E3C00ED8B95 /* FloatingViewController.xib */,
+				7C177E2F2736F9DD000D2E5C /* FloatingVC */,
+				7C177E322736FD81000D2E5C /* View */,
 				7C3C3EE02723FC4C00ED8B95 /* Assets.xcassets */,
 				7C3C3EE22723FC4C00ED8B95 /* LaunchScreen.storyboard */,
 				7C3C3F072723FD3F00ED8B95 /* Description.rtf */,
@@ -157,6 +187,7 @@
 			children = (
 				7C3C3ED82723FC4B00ED8B95 /* MapViewController.swift */,
 				7CD4868E2725971A000430D1 /* MapManager.swift */,
+				7CE18E5427413A0D0061C9E8 /* Place.swift */,
 			);
 			path = MapVC;
 			sourceTree = "<group>";
@@ -295,10 +326,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				7CEA28BA2727071200C259B6 /* Model.swift in Sources */,
+				7C54D559273D880200449CF8 /* CurrentWeather.swift in Sources */,
 				7C3C3ED92723FC4B00ED8B95 /* MapViewController.swift in Sources */,
+				7CE18E5527413A0D0061C9E8 /* Place.swift in Sources */,
 				7C3C3ED52723FC4B00ED8B95 /* AppDelegate.swift in Sources */,
 				7C3C3ED72723FC4B00ED8B95 /* SceneDelegate.swift in Sources */,
+				7C177E312736F9F7000D2E5C /* FloatingCard.swift in Sources */,
 				7C3C3F1127240E3C00ED8B95 /* FloatingViewController.swift in Sources */,
+				7C7E37EE2735408000269776 /* KeyboardNotification.swift in Sources */,
+				7C54D557273D7A6D00449CF8 /* NetworkWeatherManager.swift in Sources */,
 				7CD4868F2725971A000430D1 /* MapManager.swift in Sources */,
 				7C3C3EDF2723FC4B00ED8B95 /* WeatherMap_PP.xcdatamodeld in Sources */,
 			);
@@ -479,6 +515,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 8526PH72VB;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = WeatherMap_PP/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -507,6 +544,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 8526PH72VB;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = WeatherMap_PP/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
