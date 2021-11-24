@@ -13,7 +13,6 @@ struct ModelWeather: Decodable {
     let weather: [Weather]
     let name: String?
     let main: Main
-    
 }
 
 struct Coord: Decodable {

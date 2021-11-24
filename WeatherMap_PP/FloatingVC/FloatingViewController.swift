@@ -14,6 +14,17 @@ class FloatingViewController: UIViewController, UISearchBarDelegate{
     @IBOutlet weak var searchBar: UISearchBar!
     
     var model: ModelWeather!
+    var mapViewController: MapViewController!
+    
+    let cardHeight: CGFloat = 500
+    let cardHandleAreaHeight: CGFloat = 65
+    
+//    var cardVisible = false
+//    var nextState: CardState{
+//        return cardVisible ? .collapsed : .expanded
+//    }
+    
+    var runningAnimations = [UIViewPropertyAnimator]()
     
     override func viewDidLoad() {
         super.viewDidLoad()

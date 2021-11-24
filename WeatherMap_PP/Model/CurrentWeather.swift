@@ -7,7 +7,6 @@
 
 import Foundation
 
-// Нужно использовать в Networking как то
 struct CurrentWeather {
 
     let cityName: String
@@ -16,6 +15,9 @@ struct CurrentWeather {
     var temperatureString: String {
         return String(format: "%.0f", temperature)
     }
+    
+    let lon: Double
+    let lat: Double
     
     let conditionCode: Int
     var systemIconNameString: String {
@@ -35,6 +37,8 @@ struct CurrentWeather {
         cityName = modelWeather.name!
         temperature = modelWeather.main.temp
         conditionCode = modelWeather.weather.first!.id
+        lon = modelWeather.coord.lon
+        lat = modelWeather.coord.lat
     }
 
 
