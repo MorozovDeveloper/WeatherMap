@@ -10,6 +10,7 @@ CoreLocation
 RestAPI
 KeyboardNotification
 UIViewPropertyAnimator
+UISearchBar
 xib 
 ```
 
