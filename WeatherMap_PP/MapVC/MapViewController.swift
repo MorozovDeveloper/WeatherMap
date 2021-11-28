@@ -22,23 +22,11 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
     var lonCor = 0.0
     var image = UIImage()
     
-    // for FloatingCard ->
-  // var floatingViewController : FloatingViewController!
-    
-//    let cardHeight: CGFloat = 500
-//    let cardHandleAreaHeight: CGFloat = 65
-
-//    var cardVisible = false
-//    var nextState: CardState{
-//        return cardVisible ? .collapsed : .expanded
-//    }
-//
-//    var runningAnimations = [UIViewPropertyAnimator]()
-    // <-
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupCard()
+
     }
 }
 

@@ -23,7 +23,7 @@ extension MapViewController {
         return cardVisible ? .collapsed : .expanded
     }
     
-    // скрытие клавиатуры тапнув на любой объект  (! ДОДЕЛАТЬ ! После закрытия Вью нужно тапать 2 раза)
+    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesBegan(touches, with: event)
         if self.view.endEditing(true) {
@@ -32,27 +32,27 @@ extension MapViewController {
             }
         }
     }
-
+    
     // Create Floating View Controller
     func setupCard() {
         floatingViewController = FloatingViewController(nibName: "FloatingViewController", bundle: nil)
         self.addChild(floatingViewController)
         self.view.addSubview(floatingViewController.view)
-
+        
         floatingViewController.view.frame = CGRect(x: 0,
                                                    y: self.view.frame.height - floatingViewController.cardHandleAreaHeight + 15,
                                                    width: self.view.bounds.width,
                                                    height: floatingViewController.cardHeight)
         floatingViewController.view.clipsToBounds = true
         floatingViewController.view.layer.cornerRadius = 20
-
+        
         // Gesture
         let tapGestureRecognizer = UITapGestureRecognizer(target: self,
                                                           action: #selector(MapViewController.handleCardTap(recognizer:)))
         floatingViewController.handleArea.addGestureRecognizer(tapGestureRecognizer)
     }
     
-    // Aniamation
+    // Animation
     @objc
     func handleCardTap(recognizer: UITapGestureRecognizer){
         switch recognizer.state{
@@ -74,12 +74,12 @@ extension MapViewController {
                 case .collapsed:
                     floatingViewController.view.frame.origin.y = self.view.frame.height - floatingViewController.cardHandleAreaHeight + 15
                 }
-        }
+            }
             frameAnimator.addCompletion { _ in
                 cardVisible = !cardVisible
                 floatingViewController.runningAnimations.removeAll()
             }
-
+            
             frameAnimator.startAnimation()
             floatingViewController.runningAnimations.append(frameAnimator)
         }

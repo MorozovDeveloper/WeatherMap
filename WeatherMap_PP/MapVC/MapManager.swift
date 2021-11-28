@@ -16,28 +16,29 @@ extension MapViewController: MKMapViewDelegate {
     
     // Метка
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-
+        
         if let location = locations.first {
             manager.stopUpdatingLocation()
             render(location)
         }
-
+        
         func render(_ location: CLLocation) {
             let coordinate = CLLocationCoordinate2D(latitude: self.latCor,
-                                                        longitude: self.lonCor)
+                                                    longitude: self.lonCor)
             let span = MKCoordinateSpan(latitudeDelta: 1.0,
                                         longitudeDelta: 1.0) // маштаб
-
+            
             let region = MKCoordinateRegion(center: coordinate,
                                             span: span)
-
+            
             self.mapView.setRegion(region, animated: true)
-
+            
             let pin = MKPointAnnotation()
             pin.coordinate = coordinate
             self.mapView.addAnnotation(pin)
-                pin.title = self.pinText
-                pin.subtitle = "\(self.subText)"
+            pin.title = self.pinText
+            pin.subtitle = "\(self.subText)"
+            self.mapView.selectAnnotation(pin, animated: true)
         }
     }
     
@@ -55,13 +56,11 @@ extension MapViewController: MKMapViewDelegate {
         let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 25, height: 25))
         imageView.layer.cornerRadius = 10
         imageView.clipsToBounds = true
-        //imageView.image = UIImage(systemName: "cloud")
         imageView.image = image
         annotationView?.rightCalloutAccessoryView = imageView
-    
+        
         return annotationView
     }
-
-        
+    
 }
 

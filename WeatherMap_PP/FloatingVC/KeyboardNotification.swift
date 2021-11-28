@@ -17,16 +17,12 @@ extension FloatingViewController {
                                                selector: #selector(keyboardWillHide(notification:)),
                                                name: UIResponder.keyboardWillShowNotification,
                                                object: nil)
-//        NotificationCenter.default.addObserver(self,
-//                                               selector: #selector(keyboardWillShow(notification:)),
-//                                               name: UIResponder.keyboardWillHideNotification,
-//                                               object: nil)
     }
-
-     func removeKeyboardNotification() {
+    
+    func removeKeyboardNotification() {
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
-
+        
     }
     
     @objc  func keyboardWillShow (notification: Notification){
@@ -37,7 +33,7 @@ extension FloatingViewController {
             }
         }
     }
-
+    
     @objc  func keyboardWillHide (notification: Notification){
         if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
             if view.frame.origin.y != 0{

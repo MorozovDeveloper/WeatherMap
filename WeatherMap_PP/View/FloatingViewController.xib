@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -10,6 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FloatingViewController" customModule="WeatherMap_PP" customModuleProvider="target">
             <connections>
+                <outlet property="floatingView" destination="cCw-r8-iLf" id="r7h-6g-ec0"/>
                 <outlet property="handleArea" destination="NrB-Re-3cR" id="jvf-mV-6pc"/>
                 <outlet property="searchBar" destination="Y3G-Hy-cPy" id="4Ju-Q4-0qv"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -21,66 +22,66 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cCw-r8-iLf">
-                    <rect key="frame" x="0.0" y="63" width="375" height="437"/>
+                    <rect key="frame" x="0.0" y="44" width="375" height="456"/>
                     <subviews>
-                        <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="mpD-Cy-hnE">
-                            <rect key="frame" x="8" y="289" width="359" height="32"/>
+                        <searchBar contentMode="redraw" placeholder="Search city" translatesAutoresizingMaskIntoConstraints="NO" id="Y3G-Hy-cPy">
+                            <rect key="frame" x="0.0" y="39" width="375" height="51"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="31" id="Rtz-W0-ioy"/>
-                                <constraint firstAttribute="width" constant="359" id="idN-Fn-viB"/>
-                            </constraints>
-                            <segments>
-                                <segment title="Погода"/>
-                                <segment title="Маршрут"/>
-                            </segments>
-                        </segmentedControl>
-                        <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="Y3G-Hy-cPy">
-                            <rect key="frame" x="0.0" y="22" width="375" height="51"/>
-                            <constraints>
-                                <constraint firstAttribute="width" constant="375" id="Com-fb-tEP"/>
-                                <constraint firstAttribute="height" constant="51" id="wuM-16-UnA"/>
+                                <constraint firstAttribute="width" constant="375" id="bjy-wL-WC8"/>
+                                <constraint firstAttribute="height" constant="51" id="rIa-kd-eo2"/>
                             </constraints>
                             <textInputTraits key="textInputTraits"/>
+                            <scopeButtonTitles>
+                                <string>Title</string>
+                                <string>Title</string>
+                            </scopeButtonTitles>
                         </searchBar>
                     </subviews>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <color key="backgroundColor" red="1" green="0.87779398853632651" blue="0.68287760063194469" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
-                        <constraint firstItem="mpD-Cy-hnE" firstAttribute="leading" secondItem="cCw-r8-iLf" secondAttribute="leading" constant="8" id="8fd-oH-Srb"/>
-                        <constraint firstAttribute="trailing" secondItem="mpD-Cy-hnE" secondAttribute="trailing" constant="8" id="Joi-IY-GBq"/>
-                        <constraint firstAttribute="bottom" secondItem="mpD-Cy-hnE" secondAttribute="bottom" constant="117" id="KAg-tJ-PqN"/>
-                        <constraint firstItem="mpD-Cy-hnE" firstAttribute="top" secondItem="Y3G-Hy-cPy" secondAttribute="bottom" constant="216" id="b5m-qS-Ff5"/>
-                        <constraint firstAttribute="trailing" secondItem="Y3G-Hy-cPy" secondAttribute="trailing" id="dfr-gb-52v"/>
-                        <constraint firstItem="Y3G-Hy-cPy" firstAttribute="leading" secondItem="cCw-r8-iLf" secondAttribute="leading" id="r2S-BW-bzj"/>
+                        <constraint firstAttribute="trailing" secondItem="Y3G-Hy-cPy" secondAttribute="trailing" id="GPH-hE-KHO"/>
+                        <constraint firstAttribute="width" constant="375" id="GwQ-0E-lxJ"/>
+                        <constraint firstAttribute="height" constant="456" id="IBS-0L-rDa"/>
+                        <constraint firstAttribute="bottom" secondItem="Y3G-Hy-cPy" secondAttribute="bottom" constant="366" id="Q6Z-1F-DHZ"/>
+                        <constraint firstItem="Y3G-Hy-cPy" firstAttribute="leading" secondItem="cCw-r8-iLf" secondAttribute="leading" id="nEv-Vd-9wJ"/>
+                        <constraint firstItem="Y3G-Hy-cPy" firstAttribute="top" secondItem="cCw-r8-iLf" secondAttribute="top" constant="39" id="tzx-Eh-XIJ"/>
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NrB-Re-3cR">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="47"/>
                     <subviews>
-                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Cei-JE-6gn">
-                            <rect key="frame" x="137" y="7" width="100" height="5"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cei-JE-6gn">
+                            <rect key="frame" x="137.66666666666666" y="7" width="100" height="5"/>
                             <color key="backgroundColor" systemColor="secondaryLabelColor"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="100" id="0or-HW-soQ"/>
+                                <constraint firstAttribute="height" constant="5" id="cLd-J3-QaN"/>
+                            </constraints>
                         </view>
                     </subviews>
-                    <color key="backgroundColor" systemColor="systemGray5Color"/>
+                    <color key="backgroundColor" red="0.91764705882352937" green="0.74574410552472836" blue="0.52630995169247785" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="375" id="3A2-4T-4G3"/>
-                        <constraint firstAttribute="height" constant="47" id="B16-LY-9ol"/>
+                        <constraint firstAttribute="height" constant="47" id="9Hx-OO-XzA"/>
+                        <constraint firstItem="Cei-JE-6gn" firstAttribute="top" secondItem="NrB-Re-3cR" secondAttribute="top" constant="7" id="ONb-Td-dFw"/>
+                        <constraint firstItem="Cei-JE-6gn" firstAttribute="centerX" secondItem="NrB-Re-3cR" secondAttribute="centerX" id="a2W-bg-eyz"/>
+                        <constraint firstAttribute="width" constant="375" id="x1K-VH-faZ"/>
                     </constraints>
                 </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstAttribute="trailing" secondItem="NrB-Re-3cR" secondAttribute="trailing" id="6MW-Zd-32V"/>
-                <constraint firstItem="NrB-Re-3cR" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="RBA-CG-t6S"/>
-                <constraint firstItem="NrB-Re-3cR" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="RwR-vj-nBR"/>
-                <constraint firstItem="cCw-r8-iLf" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="fIL-Mc-W4o"/>
-                <constraint firstItem="cCw-r8-iLf" firstAttribute="top" secondItem="NrB-Re-3cR" secondAttribute="bottom" constant="16" id="hQF-xN-vIa"/>
-                <constraint firstItem="cCw-r8-iLf" firstAttribute="leading" secondItem="NrB-Re-3cR" secondAttribute="leading" id="ucE-fz-Cip"/>
+                <constraint firstItem="NrB-Re-3cR" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="0ZV-tM-vfp"/>
+                <constraint firstItem="NrB-Re-3cR" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="7zU-gY-0pz"/>
+                <constraint firstItem="cCw-r8-iLf" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="9cG-aG-E7J"/>
+                <constraint firstItem="cCw-r8-iLf" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="Klg-4R-4KF"/>
+                <constraint firstAttribute="trailing" secondItem="NrB-Re-3cR" secondAttribute="trailing" id="OIY-lN-izO"/>
+                <constraint firstItem="cCw-r8-iLf" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Xyw-Re-aZc"/>
+                <constraint firstItem="cCw-r8-iLf" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="fcU-BZ-L50"/>
+                <constraint firstAttribute="bottom" secondItem="NrB-Re-3cR" secondAttribute="bottom" constant="453" id="rC7-Zt-BUo"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="54.347826086956523" y="132.58928571428572"/>
+            <point key="canvasLocation" x="53.076923076923073" y="132.22748815165878"/>
         </view>
     </objects>
     <resources>
@@ -89,9 +90,6 @@
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemGray5Color">
-            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

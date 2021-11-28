@@ -8,12 +8,12 @@
 import Foundation
 
 struct CurrentWeather {
-
-    let cityName: String
+    
+    let cityName: String?
     
     let temperature: Double
     var temperatureString: String {
-        return String(format: "%.0f", temperature)
+        return String(format: "%.0f", temperature) // меняем формат и убираем доли
     }
     
     let lon: Double
@@ -32,7 +32,7 @@ struct CurrentWeather {
         default: return "nosign"
         }
     }
-
+    
     init?(modelWeather: ModelWeather) {
         cityName = modelWeather.name!
         temperature = modelWeather.main.temp
@@ -40,7 +40,6 @@ struct CurrentWeather {
         lon = modelWeather.coord.lon
         lat = modelWeather.coord.lat
     }
-
 
 }
 
