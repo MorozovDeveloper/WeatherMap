@@ -13,4 +13,4 @@ UIViewPropertyAnimator
 xib 
 ```
 
-![This is an image](https://Users/oleg/Desktop/Simulator%20Screen%20Shot%20-%20iPhone%2013%20Pro%20-%202021-11-28%20at%2010.56.18.png)
+![Simulator Screen Shot - iPhone 13 Pro - 2021-11-28 at 10 56 18](https://user-images.githubusercontent.com/76910221/143734902-867e0307-16ab-46f4-90d8-bd95feab396c.png)
