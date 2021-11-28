@@ -13,7 +13,6 @@ UIViewPropertyAnimator
 xib 
 ```
 
-![](images/github-small.png)
+<img src="https://user-images.githubusercontent.com/76910221/143735090-17984421-886b-4291-b3c2-1483e9c2d692.png" width="200" height="400" />
 
 
-![](https://user-images.githubusercontent.com/76910221/143735090-17984421-886b-4291-b3c2-1483e9c2d692.png=250x250)
