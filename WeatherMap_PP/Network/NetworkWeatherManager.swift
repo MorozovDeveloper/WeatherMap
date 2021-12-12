@@ -29,7 +29,7 @@ extension FloatingViewController{
                         mapVC.manager.requestWhenInUseAuthorization()// запрос авторизации
                         mapVC.manager.startUpdatingLocation()
                         
-                        mapVC.pinText = currentWeather!.cityName!
+                        mapVC.pinText = currentWeather!.cityName
                         mapVC.subText = "\(currentWeather!.temperatureString)˚C"
                         mapVC.latCor = currentWeather!.lat
                         mapVC.lonCor = currentWeather!.lon
