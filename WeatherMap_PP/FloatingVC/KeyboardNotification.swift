@@ -35,7 +35,7 @@ extension FloatingViewController {
     @objc  func keyboardWillHide (notification: Notification){
         if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
             if view.frame.origin.y != 0{
-                view.frame.origin.y = keyboardSize.height + 70
+                view.frame.origin.y = keyboardSize.height + 30
             }
         }
     }
