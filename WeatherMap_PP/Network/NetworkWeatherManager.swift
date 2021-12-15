@@ -24,16 +24,21 @@ extension FloatingViewController{
                 
                 DispatchQueue.main.async {
                     if let mapVC = self.parent as? MapViewController {
-                        mapVC.manager.desiredAccuracy = kCLLocationAccuracyBest// точность отображения
-                        mapVC.manager.delegate = mapVC.self
-                        mapVC.manager.requestWhenInUseAuthorization()// запрос авторизации
-                        mapVC.manager.startUpdatingLocation()
-                        
-                        mapVC.pinText = currentWeather!.cityName
-                        mapVC.subText = "\(currentWeather!.temperatureString)˚C"
-                        mapVC.latCor = currentWeather!.lat
-                        mapVC.lonCor = currentWeather!.lon
-                        mapVC.image = UIImage(systemName:currentWeather!.systemIconNameString)!
+                        if searchBar.text != "", searchBar.text != nil, currentWeather?.cityName != "", currentWeather?.cityName != nil  {
+                            mapVC.manager.desiredAccuracy = kCLLocationAccuracyBest// точность отображения
+                            mapVC.manager.delegate = mapVC.self
+                            mapVC.manager.requestWhenInUseAuthorization()// запрос авторизации
+                            mapVC.manager.startUpdatingLocation()
+                            
+                            mapVC.pinText = currentWeather?.cityName ?? ""
+                            mapVC.subText = "\(currentWeather!.temperatureString)˚C"
+                            mapVC.latCor = currentWeather!.lat
+                            mapVC.lonCor = currentWeather!.lon
+                            mapVC.image = UIImage(systemName:(currentWeather!.systemIconNameString))!
+                            
+                        } else {
+                            return
+                        }
                     }
                 }
             }

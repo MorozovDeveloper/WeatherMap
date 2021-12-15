@@ -35,7 +35,7 @@ class FloatingViewController: UIViewController, UISearchBarDelegate{
         view.layer.cornerRadius = 20
 
         if self.view.frame.origin.y >= 0 {
-            self.registerKeyboardNotification() 
+            self.registerKeyboardNotification()
         }
     }
     
