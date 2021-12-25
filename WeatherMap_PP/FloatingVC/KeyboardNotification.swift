@@ -8,10 +8,9 @@
 import Foundation
 import UIKit
 
-
+// KeyBoard
 extension FloatingViewController {
     
-    // KeyBoard
     func registerKeyboardNotification() {
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(keyboardWillHide(notification:)),
