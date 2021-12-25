@@ -7,7 +7,7 @@
 
 import Foundation
 import UIKit
-
+//
 class SomeDataModel {
     
     var pinText = ""
