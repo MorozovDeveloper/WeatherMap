@@ -8,7 +8,6 @@
 import Foundation
 import UIKit
 
-var floatingViewController : FloatingViewController!
 var cardVisible = false
 
 extension MapViewController {
@@ -28,7 +27,7 @@ extension MapViewController {
         super.touchesBegan(touches, with: event)
         if self.view.endEditing(true) {
             UIView.animate(withDuration: 0.5) {
-                floatingViewController.view.frame.origin.y = self.view.frame.height - floatingViewController.cardHandleAreaHeight + 15
+                self.floatingViewController.view.frame.origin.y = self.view.frame.height - self.floatingViewController.cardHandleAreaHeight + 15
             }
         }
     }
@@ -70,14 +69,14 @@ extension MapViewController {
                 
                 switch state {
                 case .expanded:
-                    floatingViewController.view.frame.origin.y = self.view.frame.height - floatingViewController.cardHeight + 130
+                    self.floatingViewController.view.frame.origin.y = self.view.frame.height - self.floatingViewController.cardHeight + 130
                 case .collapsed:
-                    floatingViewController.view.frame.origin.y = self.view.frame.height - floatingViewController.cardHandleAreaHeight + 15
+                    self.floatingViewController.view.frame.origin.y = self.view.frame.height - self.floatingViewController.cardHandleAreaHeight + 15
                 }
             }
             frameAnimator.addCompletion { _ in
                 cardVisible = !cardVisible
-                floatingViewController.runningAnimations.removeAll()
+                self.floatingViewController.runningAnimations.removeAll()
             }
             
             frameAnimator.startAnimation()

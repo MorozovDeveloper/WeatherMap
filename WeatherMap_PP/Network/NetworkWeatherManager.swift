@@ -30,11 +30,11 @@ extension FloatingViewController{
                             mapVC.manager.requestWhenInUseAuthorization()// запрос авторизации
                             mapVC.manager.startUpdatingLocation()
                             
-                            mapVC.pinText = currentWeather?.cityName ?? ""
-                            mapVC.subText = "\(currentWeather!.temperatureString)˚C"
-                            mapVC.latCor = currentWeather!.lat
-                            mapVC.lonCor = currentWeather!.lon
-                            mapVC.image = UIImage(systemName:(currentWeather!.systemIconNameString))!
+                            mapVC.someDataModel.pinText = currentWeather?.cityName ?? ""
+                            mapVC.someDataModel.subText = "\(currentWeather!.temperatureString)˚C"
+                            mapVC.someDataModel.latCor = currentWeather!.lat
+                            mapVC.someDataModel.lonCor = currentWeather!.lon
+                            mapVC.someDataModel.image = UIImage(systemName:(currentWeather!.systemIconNameString))!
                             
                         } else {
                             return

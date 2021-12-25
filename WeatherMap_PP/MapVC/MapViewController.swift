@@ -16,12 +16,8 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
     let manager = CLLocationManager()
     let annotaionIdentifier = "annotaionIdentifier"
     
-    var pinText = ""
-    var subText = ""
-    var latCor = 0.0
-    var lonCor = 0.0
-    var image = UIImage()
-    
+    var someDataModel = SomeDataModel()
+    var floatingViewController : FloatingViewController!
     
     override func viewDidLoad() {
         super.viewDidLoad()

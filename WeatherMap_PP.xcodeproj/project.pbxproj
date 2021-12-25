@@ -24,6 +24,7 @@
 		7C54D557273D7A6D00449CF8 /* NetworkWeatherManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C54D556273D7A6D00449CF8 /* NetworkWeatherManager.swift */; };
 		7C54D559273D880200449CF8 /* CurrentWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C54D558273D880200449CF8 /* CurrentWeather.swift */; };
 		7C7E37EE2735408000269776 /* KeyboardNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C7E37ED2735408000269776 /* KeyboardNotification.swift */; };
+		7C99EECD277735C5004BE7BE /* SomeDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C99EECC277735C5004BE7BE /* SomeDataModel.swift */; };
 		7CD4868F2725971A000430D1 /* MapManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CD4868E2725971A000430D1 /* MapManager.swift */; };
 		7CEA28BA2727071200C259B6 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CEA28B92727071200C259B6 /* Model.swift */; };
 /* End PBXBuildFile section */
@@ -67,6 +68,7 @@
 		7C54D556273D7A6D00449CF8 /* NetworkWeatherManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkWeatherManager.swift; sourceTree = "<group>"; };
 		7C54D558273D880200449CF8 /* CurrentWeather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWeather.swift; sourceTree = "<group>"; };
 		7C7E37ED2735408000269776 /* KeyboardNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardNotification.swift; sourceTree = "<group>"; };
+		7C99EECC277735C5004BE7BE /* SomeDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SomeDataModel.swift; sourceTree = "<group>"; };
 		7CD4868E2725971A000430D1 /* MapManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapManager.swift; sourceTree = "<group>"; };
 		7CEA28B92727071200C259B6 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -184,6 +186,7 @@
 			children = (
 				7CEA28B92727071200C259B6 /* Model.swift */,
 				7C54D558273D880200449CF8 /* CurrentWeather.swift */,
+				7C99EECC277735C5004BE7BE /* SomeDataModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -333,6 +336,7 @@
 				7CEA28BA2727071200C259B6 /* Model.swift in Sources */,
 				7C54D559273D880200449CF8 /* CurrentWeather.swift in Sources */,
 				7C3C3ED92723FC4B00ED8B95 /* MapViewController.swift in Sources */,
+				7C99EECD277735C5004BE7BE /* SomeDataModel.swift in Sources */,
 				7C3C3ED52723FC4B00ED8B95 /* AppDelegate.swift in Sources */,
 				7C3C3ED72723FC4B00ED8B95 /* SceneDelegate.swift in Sources */,
 				7C177E312736F9F7000D2E5C /* FloatingCard.swift in Sources */,
