@@ -16,7 +16,6 @@ extension FloatingViewController {
                                                selector: #selector(keyboardWillHide(notification:)),
                                                name: UIResponder.keyboardWillShowNotification,
                                                object: nil)
-
     }
     
     func removeKeyboardNotification() {
