@@ -14,10 +14,9 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var mapView: MKMapView!
     
     let manager = CLLocationManager()
-    let annotaionIdentifier = "annotaionIdentifier"
     
     var someDataModel = SomeDataModel()
-    var floatingViewController : FloatingViewController!
+    var floatingViewController = FloatingViewController()
     
     override func viewDidLoad() {
         super.viewDidLoad()

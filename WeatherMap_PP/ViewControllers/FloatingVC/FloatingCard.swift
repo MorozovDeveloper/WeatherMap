@@ -8,8 +8,6 @@
 import Foundation
 import UIKit
 
-var cardVisible = false
-
 extension MapViewController {
     
     // положение FloatingVC
@@ -19,7 +17,7 @@ extension MapViewController {
     }
     
     var nextState: CardState{
-        return cardVisible ? .collapsed : .expanded
+        return someDataModel.cardVisible ? .collapsed : .expanded
     }
     
     
@@ -27,7 +25,7 @@ extension MapViewController {
         super.touchesBegan(touches, with: event)
         if self.view.endEditing(true) {
             UIView.animate(withDuration: 0.5) {
-                self.floatingViewController.view.frame.origin.y = self.view.frame.height - self.floatingViewController.cardHandleAreaHeight + 15
+                self.floatingViewController.view.frame.origin.y = self.view.frame.height - self.someDataModel.cardHandleAreaHeight + 15
             }
         }
     }
@@ -39,9 +37,9 @@ extension MapViewController {
         self.view.addSubview(floatingViewController.view)
         
         floatingViewController.view.frame = CGRect(x: 0,
-                                                   y: self.view.frame.height - floatingViewController.cardHandleAreaHeight + 15,
+                                                   y: self.view.frame.height - someDataModel.cardHandleAreaHeight + 15,
                                                    width: self.view.bounds.width,
-                                                   height: floatingViewController.cardHeight)
+                                                   height: someDataModel.cardHeight)
         floatingViewController.view.clipsToBounds = true
         floatingViewController.view.layer.cornerRadius = 20
         
@@ -69,13 +67,13 @@ extension MapViewController {
                 
                 switch state {
                 case .expanded:
-                    self.floatingViewController.view.frame.origin.y = self.view.frame.height - self.floatingViewController.cardHeight + 130
+                    self.floatingViewController.view.frame.origin.y = self.view.frame.height - self.someDataModel.cardHeight + 130
                 case .collapsed:
-                    self.floatingViewController.view.frame.origin.y = self.view.frame.height - self.floatingViewController.cardHandleAreaHeight + 15
+                    self.floatingViewController.view.frame.origin.y = self.view.frame.height - self.someDataModel.cardHandleAreaHeight + 15
                 }
             }
             frameAnimator.addCompletion { _ in
-                cardVisible = !cardVisible
+                self.someDataModel.cardVisible = !self.someDataModel.cardVisible
                 self.floatingViewController.runningAnimations.removeAll()
             }
             

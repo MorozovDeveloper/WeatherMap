@@ -101,7 +101,6 @@
 		7C177E2F2736F9DD000D2E5C /* FloatingVC */ = {
 			isa = PBXGroup;
 			children = (
-				7C3C3F0F27240E3C00ED8B95 /* FloatingViewController.swift */,
 				7C177E302736F9F7000D2E5C /* FloatingCard.swift */,
 				7C7E37ED2735408000269776 /* KeyboardNotification.swift */,
 			);
@@ -111,6 +110,8 @@
 		7C177E322736FD81000D2E5C /* View */ = {
 			isa = PBXGroup;
 			children = (
+				7C3C3ED82723FC4B00ED8B95 /* MapViewController.swift */,
+				7C3C3F0F27240E3C00ED8B95 /* FloatingViewController.swift */,
 				7C3C3F1027240E3C00ED8B95 /* FloatingViewController.xib */,
 				7C3C3EDA2723FC4B00ED8B95 /* Main.storyboard */,
 			);
@@ -143,9 +144,9 @@
 				7C3C3ED42723FC4B00ED8B95 /* AppDelegate.swift */,
 				7C3C3ED62723FC4B00ED8B95 /* SceneDelegate.swift */,
 				7C9BCB41272EE69000C2D1C6 /* Model */,
+				7C177E322736FD81000D2E5C /* View */,
 				7C99EED127774E25004BE7BE /* ViewControllers */,
 				7C5D5661274D589600241B5E /* Network */,
-				7C177E322736FD81000D2E5C /* View */,
 				7C3C3EE02723FC4C00ED8B95 /* Assets.xcassets */,
 				7C3C3EE22723FC4C00ED8B95 /* LaunchScreen.storyboard */,
 				7C3C3F072723FD3F00ED8B95 /* Description.rtf */,
@@ -202,7 +203,6 @@
 		7CD4869127259CF3000430D1 /* MapVC */ = {
 			isa = PBXGroup;
 			children = (
-				7C3C3ED82723FC4B00ED8B95 /* MapViewController.swift */,
 				7CD4868E2725971A000430D1 /* MapManager.swift */,
 			);
 			path = MapVC;

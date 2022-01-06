@@ -17,14 +17,10 @@ class FloatingViewController: UIViewController, UISearchBarDelegate{
     var model: ModelWeather!
     var mapViewController: MapViewController!
     
-    let cardHeight: CGFloat = 500
-    let cardHandleAreaHeight: CGFloat = 65
-    
     var runningAnimations = [UIViewPropertyAnimator]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         searchBar.delegate = self
         
         if let textfield = searchBar.value(forKey: "searchField") as? UITextField {

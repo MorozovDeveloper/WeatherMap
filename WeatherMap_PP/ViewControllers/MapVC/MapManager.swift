@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import Foundation
 import MapKit
 import CoreLocation
 
@@ -46,10 +45,10 @@ extension MapViewController: MKMapViewDelegate {
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         guard !(annotation is MKUserLocation) else {return nil}
         
-        var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: annotaionIdentifier) as? MKPinAnnotationView
+        var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: someDataModel.annotaionIdentifier) as? MKPinAnnotationView
         
         if annotationView == nil {
-            annotationView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: self.annotaionIdentifier)
+            annotationView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: self.someDataModel.annotaionIdentifier)
             annotationView?.canShowCallout = true
         }
         

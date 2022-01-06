@@ -16,4 +16,11 @@ class SomeDataModel {
     var lonCor = 0.0
     var image = UIImage()
     
+    let cardHeight: CGFloat = 500
+    let cardHandleAreaHeight: CGFloat = 65
+    
+    var cardVisible = false
+    
+    let annotaionIdentifier = "annotaionIdentifier"
+    
 }
