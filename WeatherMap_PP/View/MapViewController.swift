@@ -22,6 +22,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
         super.viewDidLoad()
         setupCard()
 
+        
     }
 }
 
