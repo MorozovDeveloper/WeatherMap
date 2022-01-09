@@ -14,9 +14,6 @@ class FloatingViewController: UIViewController, UISearchBarDelegate{
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var floatingView: UIView!
     
-    var model: ModelWeather!
-    var mapViewController: MapViewController!
-    
     var runningAnimations = [UIViewPropertyAnimator]()
     
     override func viewDidLoad() {
