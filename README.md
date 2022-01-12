@@ -4,7 +4,7 @@
 
 ```
 Применение:
-MVVM
+MVC
 MapKit
 CoreLocation
 RestAPI
