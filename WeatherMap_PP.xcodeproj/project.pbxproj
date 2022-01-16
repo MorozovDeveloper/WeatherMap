@@ -145,8 +145,7 @@
 				7C3C3ED62723FC4B00ED8B95 /* SceneDelegate.swift */,
 				7C9BCB41272EE69000C2D1C6 /* Model */,
 				7C177E322736FD81000D2E5C /* View */,
-				7C99EED127774E25004BE7BE /* ViewModel */,
-				7C5D5661274D589600241B5E /* Network */,
+				7C99EED127774E25004BE7BE /* Controller */,
 				7C3C3EE02723FC4C00ED8B95 /* Assets.xcassets */,
 				7C3C3EE22723FC4C00ED8B95 /* LaunchScreen.storyboard */,
 				7C3C3F072723FD3F00ED8B95 /* Description.rtf */,
@@ -181,13 +180,14 @@
 			path = Network;
 			sourceTree = "<group>";
 		};
-		7C99EED127774E25004BE7BE /* ViewModel */ = {
+		7C99EED127774E25004BE7BE /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				7C5D5661274D589600241B5E /* Network */,
 				7CD4869127259CF3000430D1 /* MapVC */,
 				7C177E2F2736F9DD000D2E5C /* FloatingVC */,
 			);
-			path = ViewModel;
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		7C9BCB41272EE69000C2D1C6 /* Model */ = {
