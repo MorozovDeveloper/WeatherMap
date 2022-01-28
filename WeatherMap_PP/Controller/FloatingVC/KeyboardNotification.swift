@@ -23,14 +23,6 @@ extension FloatingViewController {
         
     }
     
-    @objc  func keyboardWillShow (notification: Notification){
-        if let _ = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue { // есть ли клавиатура
-            if view.frame.origin.y == 0{
-                view.frame.origin.y = CGFloat.zero
-                print("Open")
-            }
-        }
-    }
     
     @objc  func keyboardWillHide (notification: Notification){
         if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
