@@ -13,16 +13,14 @@ extension FloatingViewController {
     
     func registerKeyboardNotification() {
         NotificationCenter.default.addObserver(self,
-                                               selector: #selector(keyboardWillHide(notification:)),
+                                               selector: #selector(keyboardWillHide),
                                                name: UIResponder.keyboardWillShowNotification,
                                                object: nil)
     }
     
     func removeKeyboardNotification() {
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
-        
     }
-    
     
     @objc  func keyboardWillHide (notification: Notification){
         if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {

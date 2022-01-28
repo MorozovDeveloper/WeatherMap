@@ -22,8 +22,8 @@ extension MapViewController: MKMapViewDelegate {
         }
         
         func render(_ location: CLLocation) {
-            let coordinate = CLLocationCoordinate2D(latitude: self.someDataModel.latCor,
-                                                    longitude: self.someDataModel.lonCor)
+            let coordinate = CLLocationCoordinate2D(latitude: SomeDataModel.shared.latCor,
+                                                    longitude: SomeDataModel.shared.lonCor)
             let span = MKCoordinateSpan(latitudeDelta: 1.0,
                                         longitudeDelta: 1.0) // маштаб
             
@@ -35,8 +35,8 @@ extension MapViewController: MKMapViewDelegate {
             let pin = MKPointAnnotation()
             pin.coordinate = coordinate
             self.mapView.addAnnotation(pin)
-            pin.title = self.someDataModel.pinText
-            pin.subtitle = "\(self.someDataModel.subText)"
+            pin.title = SomeDataModel.shared.pinText
+            pin.subtitle = "\(SomeDataModel.shared.subText)"
             self.mapView.selectAnnotation(pin, animated: true)
         }
     }
@@ -45,17 +45,17 @@ extension MapViewController: MKMapViewDelegate {
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         guard !(annotation is MKUserLocation) else {return nil}
         
-        var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: someDataModel.annotaionIdentifier) as? MKPinAnnotationView
+        var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: SomeDataModel.shared.annotaionIdentifier) as? MKPinAnnotationView
         
         if annotationView == nil {
-            annotationView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: self.someDataModel.annotaionIdentifier)
+            annotationView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: SomeDataModel.shared.annotaionIdentifier)
             annotationView?.canShowCallout = true
         }
         
         let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 25, height: 25))
         imageView.layer.cornerRadius = 10
         imageView.clipsToBounds = true
-        imageView.image = someDataModel.image
+        imageView.image = SomeDataModel.shared.image
         annotationView?.rightCalloutAccessoryView = imageView
         
         return annotationView

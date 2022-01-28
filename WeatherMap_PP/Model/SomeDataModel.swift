@@ -9,6 +9,8 @@ import Foundation
 import UIKit
 
 class SomeDataModel {
+    static var shared = SomeDataModel()
+    private init() {}
     
     var pinText = ""
     var subText = ""
