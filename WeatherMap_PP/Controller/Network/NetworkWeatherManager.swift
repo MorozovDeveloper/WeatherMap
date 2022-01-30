@@ -56,7 +56,7 @@ extension FloatingViewController{
             return currentWeather
         }
         
-        catch let error as NSError {
+        catch {
             print(error.localizedDescription)
         }
         return nil
