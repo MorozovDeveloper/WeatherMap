@@ -61,7 +61,7 @@ extension MapViewController {
     
     // Появление/скрытие FloatingVC
     func animateTransitionIfNeedet(state: CardState, duration: TimeInterval) {
-        if  floatingViewController.runningAnimations.isEmpty {
+        if floatingViewController.runningAnimations.isEmpty {
             let frameAnimator = UIViewPropertyAnimator(duration: duration, dampingRatio: 1) {
                 
                 switch state {

@@ -11,14 +11,14 @@ import MapKit
 import CoreLocation
 
 extension FloatingViewController{
-    
+
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         
         let urlString = "https://api.openweathermap.org/data/2.5/weather?q=\(searchBar.text!)&appid=7e3403ac663fef8ed47de5ca39a32c07&units=metric"
         guard let url = URL(string: urlString) else {return}
         let session = URLSession(configuration: .default)
         
-        let task = session.dataTask(with: url) { data, response, error in
+        let task = session.dataTask(with: url) { data, _ , error in
             if let data = data {
                 let currentWeather = self.parseJSON(withData: data)
                 

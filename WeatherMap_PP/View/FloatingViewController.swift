@@ -30,6 +30,7 @@ class FloatingViewController: UIViewController, UISearchBarDelegate{
         if self.view.frame.origin.y >= 0 {
             self.registerKeyboardNotification()
         }
+        
     }
     
     deinit {
